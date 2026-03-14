@@ -1,0 +1,170 @@
+import { motion } from "framer-motion";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, LineChart, Line, Legend, ScatterChart, Scatter, ZAxis, CartesianGrid } from "recharts";
+
+const incomeData = [
+  { group: "Low Income", rate: 11.2 },
+  { group: "Lower-Middle", rate: 12.8 },
+  { group: "Upper-Middle", rate: 8.5 },
+  { group: "High Income", rate: 11.6 },
+];
+
+const crisisData = [
+  { year: "2005", unemployment: 5.1, suicideRate: 11.2 },
+  { year: "2006", unemployment: 4.6, suicideRate: 11.0 },
+  { year: "2007", unemployment: 4.6, suicideRate: 11.3 },
+  { year: "2008", unemployment: 5.8, suicideRate: 11.8 },
+  { year: "2009", unemployment: 9.3, suicideRate: 12.4 },
+  { year: "2010", unemployment: 9.6, suicideRate: 12.4 },
+  { year: "2011", unemployment: 8.9, suicideRate: 12.7 },
+  { year: "2015", unemployment: 5.3, suicideRate: 13.3 },
+  { year: "2019", unemployment: 3.7, suicideRate: 13.9 },
+  { year: "2020", unemployment: 8.1, suicideRate: 13.5 },
+  { year: "2021", unemployment: 5.4, suicideRate: 14.1 },
+];
+
+const scatterData = [
+  { gdp: 2000, rate: 15, country: "India", z: 500 },
+  { gdp: 5000, rate: 12, country: "Brazil", z: 300 },
+  { gdp: 10000, rate: 8, country: "Mexico", z: 200 },
+  { gdp: 15000, rate: 18, country: "Russia", z: 400 },
+  { gdp: 25000, rate: 14, country: "Japan", z: 350 },
+  { gdp: 35000, rate: 11, country: "Germany", z: 250 },
+  { gdp: 45000, rate: 12, country: "Australia", z: 200 },
+  { gdp: 65000, rate: 14, country: "USA", z: 450 },
+  { gdp: 8000, rate: 6, country: "Peru", z: 150 },
+  { gdp: 12000, rate: 22, country: "Lithuania", z: 100 },
+];
+
+const insights = [
+  { text: "Economic crises increase suicide risk by 20–30%", icon: "📉" },
+  { text: "Job loss is a leading risk factor, especially in men 40–60", icon: "💼" },
+  { text: "Poverty and debt are significant contributing factors", icon: "🏦" },
+  { text: "Countries with stronger social safety nets show lower rates", icon: "🛡️" },
+];
+
+const CustomTooltip = ({ active, payload, label }: any) => {
+  if (!active || !payload) return null;
+  return (
+    <div className="bg-card border border-border rounded-xl p-3 shadow-soft text-sm">
+      <p className="font-semibold text-foreground">{label}</p>
+      {payload.map((p: any) => (
+        <p key={p.name} style={{ color: p.color }} className="mt-1">
+          {p.name}: {p.value}
+        </p>
+      ))}
+    </div>
+  );
+};
+
+const ScatterTooltip = ({ active, payload }: any) => {
+  if (!active || !payload?.[0]) return null;
+  const d = payload[0].payload;
+  return (
+    <div className="bg-card border border-border rounded-xl p-3 shadow-soft text-sm">
+      <p className="font-semibold text-foreground">{d.country}</p>
+      <p className="text-muted-foreground">GDP/capita: ${d.gdp.toLocaleString()}</p>
+      <p className="text-primary">Rate: {d.rate} per 100k</p>
+    </div>
+  );
+};
+
+const EconomicFactors = () => {
+  return (
+    <section className="px-6 py-24">
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Economic Factors</h2>
+          <p className="text-muted-foreground mt-3 text-lg max-w-xl mx-auto">
+            Economic stability plays a critical role in mental health outcomes.
+          </p>
+        </motion.div>
+
+        {/* Insight Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+          {insights.map((card) => (
+            <motion.div
+              key={card.text}
+              className="p-6 rounded-2xl bg-card border border-border shadow-soft"
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-2xl">{card.icon}</span>
+              <p className="text-foreground font-medium mt-3 leading-relaxed text-sm">{card.text}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Scatter: GDP vs Rate */}
+          <motion.div
+            className="p-8 rounded-2xl bg-card border border-border shadow-soft"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-lg font-semibold mb-6">GDP per Capita vs Suicide Rate</h3>
+            <ResponsiveContainer width="100%" height={300}>
+              <ScatterChart>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(214, 32%, 91%)" />
+                <XAxis dataKey="gdp" name="GDP" tick={{ fontSize: 11 }} stroke="hsl(215, 16%, 47%)" tickFormatter={(v) => `$${(v/1000).toFixed(0)}k`} />
+                <YAxis dataKey="rate" name="Rate" tick={{ fontSize: 11 }} stroke="hsl(215, 16%, 47%)" />
+                <ZAxis dataKey="z" range={[40, 200]} />
+                <Tooltip content={<ScatterTooltip />} />
+                <Scatter data={scatterData} fill="hsl(173, 80%, 30%)" fillOpacity={0.7} />
+              </ScatterChart>
+            </ResponsiveContainer>
+          </motion.div>
+
+          {/* Line: Unemployment vs Suicide */}
+          <motion.div
+            className="p-8 rounded-2xl bg-card border border-border shadow-soft"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-lg font-semibold mb-6">Unemployment vs Suicide Rate Over Time</h3>
+            <ResponsiveContainer width="100%" height={300}>
+              <LineChart data={crisisData}>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(214, 32%, 91%)" />
+                <XAxis dataKey="year" tick={{ fontSize: 11 }} stroke="hsl(215, 16%, 47%)" />
+                <YAxis yAxisId="left" tick={{ fontSize: 11 }} stroke="hsl(215, 16%, 47%)" />
+                <YAxis yAxisId="right" orientation="right" tick={{ fontSize: 11 }} stroke="hsl(215, 16%, 47%)" />
+                <Tooltip content={<CustomTooltip />} />
+                <Legend />
+                <Line yAxisId="left" type="monotone" dataKey="unemployment" name="Unemployment %" stroke="hsl(38, 92%, 50%)" strokeWidth={2} dot={{ r: 3 }} />
+                <Line yAxisId="right" type="monotone" dataKey="suicideRate" name="Suicide Rate" stroke="hsl(173, 80%, 30%)" strokeWidth={2} dot={{ r: 3 }} />
+              </LineChart>
+            </ResponsiveContainer>
+          </motion.div>
+
+          {/* Bar: By Income Level */}
+          <motion.div
+            className="p-8 rounded-2xl bg-card border border-border shadow-soft lg:col-span-2"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-lg font-semibold mb-6">Suicide Rates by Income Level</h3>
+            <ResponsiveContainer width="100%" height={250}>
+              <BarChart data={incomeData}>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(214, 32%, 91%)" />
+                <XAxis dataKey="group" tick={{ fontSize: 12 }} stroke="hsl(215, 16%, 47%)" />
+                <YAxis tick={{ fontSize: 12 }} stroke="hsl(215, 16%, 47%)" />
+                <Tooltip content={<CustomTooltip />} />
+                <Bar dataKey="rate" name="Rate per 100k" fill="hsl(217, 91%, 65%)" radius={[8, 8, 0, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default EconomicFactors;
