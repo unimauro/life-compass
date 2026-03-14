@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-[85vh] flex flex-col items-center justify-center px-6 py-24 overflow-hidden">
       {/* Subtle background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-teal-50/50 via-background to-background dark:from-teal-900/10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
       
       <motion.div
         className="relative z-10 max-w-4xl mx-auto text-center space-y-8"
