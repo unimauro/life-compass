@@ -1,0 +1,152 @@
+country,country_code,year,rate_total,rate_male,rate_female
+Lesotho,LSO,2019,72.4,92.1,56.6
+Guyana,GUY,2019,40.3,65.4,17.5
+Eswatini,SWZ,2019,29.4,50.8,11.2
+South Korea,KOR,2019,28.6,39.5,18.5
+South Korea,KOR,2020,27.3,38.0,17.4
+South Korea,KOR,2021,26.0,36.6,16.2
+Kiribati,KIR,2019,28.3,38.1,18.4
+Lithuania,LTU,2019,24.4,43.4,7.3
+Lithuania,LTU,2020,22.6,40.1,7.0
+Lithuania,LTU,2021,21.8,38.5,6.8
+Suriname,SUR,2019,23.2,35.6,11.4
+Russia,RUS,2019,21.6,38.2,7.5
+Russia,RUS,2020,20.1,35.8,7.0
+Russia,RUS,2021,19.5,34.5,6.7
+South Africa,ZAF,2019,20.2,32.4,9.2
+Belarus,BLR,2019,19.1,34.0,6.5
+Uruguay,URY,2019,18.4,30.2,7.6
+Uruguay,URY,2020,18.8,30.9,7.8
+Uruguay,URY,2021,19.0,31.2,7.9
+Belgium,BEL,2019,17.6,25.1,10.3
+Japan,JPN,2019,16.7,24.0,10.1
+Japan,JPN,2020,16.4,23.1,10.0
+Japan,JPN,2021,16.8,23.5,10.5
+Hungary,HUN,2019,16.2,26.2,7.4
+Latvia,LVA,2019,16.1,28.8,5.2
+Slovenia,SVN,2019,15.7,25.5,6.5
+Kazakhstan,KAZ,2019,15.3,27.1,5.0
+Poland,POL,2019,14.2,25.1,4.1
+France,FRA,2019,13.8,21.2,7.0
+France,FRA,2020,13.2,20.4,6.6
+France,FRA,2021,12.8,19.8,6.4
+United States,USA,2019,14.5,22.4,6.2
+United States,USA,2020,13.5,21.1,5.8
+United States,USA,2021,14.1,22.0,6.0
+Australia,AUS,2019,12.1,18.5,5.8
+Australia,AUS,2020,12.0,18.3,5.7
+Australia,AUS,2021,12.1,18.4,5.8
+Germany,DEU,2019,11.5,16.6,6.5
+Germany,DEU,2020,11.2,16.1,6.4
+Germany,DEU,2021,10.9,15.7,6.2
+Canada,CAN,2019,11.8,17.6,6.2
+Canada,CAN,2020,11.3,17.0,5.8
+Canada,CAN,2021,11.5,17.2,5.9
+India,IND,2019,12.9,15.0,10.7
+India,IND,2020,12.7,14.8,10.5
+India,IND,2021,13.0,15.2,10.8
+China,CHN,2019,8.1,9.1,7.0
+China,CHN,2020,7.8,8.8,6.8
+China,CHN,2021,7.5,8.5,6.5
+Brazil,BRA,2019,6.4,10.2,2.9
+Brazil,BRA,2020,6.6,10.5,3.0
+Brazil,BRA,2021,6.9,10.9,3.1
+Mexico,MEX,2019,5.3,8.6,2.2
+Mexico,MEX,2020,5.6,9.1,2.3
+Mexico,MEX,2021,5.8,9.4,2.4
+Argentina,ARG,2019,8.1,12.8,3.6
+Argentina,ARG,2020,7.8,12.4,3.4
+Argentina,ARG,2021,8.0,12.6,3.5
+Chile,CHL,2019,10.7,17.8,3.9
+Chile,CHL,2020,10.2,17.0,3.7
+Chile,CHL,2021,10.5,17.4,3.8
+Colombia,COL,2019,5.8,9.4,2.3
+Colombia,COL,2020,6.0,9.7,2.5
+Colombia,COL,2021,6.2,10.0,2.6
+Peru,PER,2019,3.0,4.3,1.8
+Peru,PER,2020,3.2,4.6,1.9
+Peru,PER,2021,3.4,4.8,2.0
+Ecuador,ECU,2019,7.1,10.4,3.9
+Ecuador,ECU,2020,7.3,10.7,4.0
+Ecuador,ECU,2021,7.5,11.0,4.1
+Bolivia,BOL,2019,12.2,16.3,8.2
+Bolivia,BOL,2020,12.5,16.7,8.4
+Bolivia,BOL,2021,12.8,17.0,8.6
+Paraguay,PRY,2019,6.1,9.5,2.8
+Paraguay,PRY,2020,6.3,9.8,2.9
+Paraguay,PRY,2021,6.5,10.1,3.0
+Venezuela,VEN,2019,4.5,7.6,1.6
+Venezuela,VEN,2020,4.8,8.0,1.8
+Venezuela,VEN,2021,5.0,8.3,1.9
+Cuba,CUB,2019,11.6,16.0,7.2
+Cuba,CUB,2020,11.3,15.6,7.0
+Cuba,CUB,2021,11.0,15.2,6.8
+Costa Rica,CRI,2019,7.2,11.8,2.8
+Costa Rica,CRI,2020,7.5,12.2,3.0
+Costa Rica,CRI,2021,7.7,12.5,3.1
+Panama,PAN,2019,4.8,7.5,2.2
+Panama,PAN,2020,5.0,7.8,2.3
+Panama,PAN,2021,5.2,8.1,2.4
+Guatemala,GTM,2019,3.4,5.8,1.2
+Guatemala,GTM,2020,3.5,6.0,1.3
+Guatemala,GTM,2021,3.6,6.2,1.3
+Honduras,HND,2019,3.1,5.0,1.3
+Honduras,HND,2020,3.2,5.2,1.4
+Honduras,HND,2021,3.3,5.3,1.4
+El Salvador,SLV,2019,7.4,12.5,2.9
+El Salvador,SLV,2020,7.6,12.8,3.0
+El Salvador,SLV,2021,7.8,13.1,3.1
+Dominican Republic,DOM,2019,5.5,9.0,2.1
+Dominican Republic,DOM,2020,5.7,9.3,2.2
+Dominican Republic,DOM,2021,5.9,9.6,2.3
+Nicaragua,NIC,2019,6.5,10.2,3.0
+Nicaragua,NIC,2020,6.7,10.5,3.1
+Nicaragua,NIC,2021,6.9,10.8,3.2
+Spain,ESP,2019,8.3,12.5,4.3
+Spain,ESP,2020,8.0,12.0,4.2
+Spain,ESP,2021,8.4,12.6,4.4
+United Kingdom,GBR,2019,8.0,12.5,3.8
+United Kingdom,GBR,2020,7.7,12.0,3.7
+United Kingdom,GBR,2021,7.9,12.3,3.8
+Sweden,SWE,2019,13.8,19.1,8.6
+Sweden,SWE,2020,13.2,18.4,8.1
+Sweden,SWE,2021,12.9,18.0,7.9
+Norway,NOR,2019,12.2,17.3,7.2
+Norway,NOR,2020,11.8,16.8,6.9
+Norway,NOR,2021,11.5,16.4,6.7
+Finland,FIN,2019,15.3,23.0,7.8
+Finland,FIN,2020,14.8,22.2,7.6
+Finland,FIN,2021,14.5,21.8,7.4
+New Zealand,NZL,2019,13.0,19.8,6.5
+New Zealand,NZL,2020,12.5,19.0,6.2
+New Zealand,NZL,2021,12.2,18.6,6.0
+Thailand,THA,2019,7.9,12.3,3.7
+Thailand,THA,2020,8.2,12.8,3.9
+Thailand,THA,2021,8.5,13.2,4.0
+Nigeria,NGA,2019,6.9,10.1,3.9
+Nigeria,NGA,2020,7.0,10.3,4.0
+Nigeria,NGA,2021,7.1,10.4,4.0
+Kenya,KEN,2019,6.1,9.5,3.0
+Kenya,KEN,2020,6.3,9.7,3.1
+Kenya,KEN,2021,6.4,9.9,3.2
+Egypt,EGY,2019,3.1,4.4,1.8
+Egypt,EGY,2020,3.0,4.3,1.8
+Egypt,EGY,2021,3.0,4.3,1.7
+Italy,ITA,2019,6.7,10.7,3.0
+Italy,ITA,2020,6.5,10.4,2.9
+Italy,ITA,2021,6.3,10.1,2.8
+Netherlands,NLD,2019,11.4,15.9,7.0
+Netherlands,NLD,2020,10.9,15.3,6.7
+Netherlands,NLD,2021,10.6,14.9,6.5
+Switzerland,CHE,2019,12.2,17.6,7.0
+Switzerland,CHE,2020,11.8,17.0,6.8
+Switzerland,CHE,2021,11.5,16.6,6.6
+Portugal,PRT,2019,10.1,16.2,4.6
+Portugal,PRT,2020,9.8,15.7,4.4
+Portugal,PRT,2021,9.5,15.3,4.3
+Austria,AUT,2019,14.0,21.3,7.2
+Austria,AUT,2020,13.5,20.5,7.0
+Austria,AUT,2021,13.2,20.1,6.8
+Ireland,IRL,2019,10.3,16.5,4.3
+Ireland,IRL,2020,9.9,15.9,4.1
+Ireland,IRL,2021,9.6,15.4,4.0

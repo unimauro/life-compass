@@ -1,35 +1,6 @@
 import { motion } from "framer-motion";
 import { AlertTriangle, Heart, MessageCircle, XCircle, ExternalLink } from "lucide-react";
-
-const warningSigns = [
-  { icon: "💬", text: "Talking about wanting to die or feeling hopeless" },
-  { icon: "😔", text: "Withdrawing from friends, family, and activities" },
-  { icon: "🔄", text: "Dramatic mood changes or extreme anxiety" },
-  { icon: "⚠️", text: "Giving away prized possessions" },
-  { icon: "😴", text: "Sleeping too much or too little" },
-  { icon: "💊", text: "Increased substance use" },
-];
-
-const howToHelp = [
-  { step: 1, title: "Ask directly", description: "\"Are you thinking about suicide?\" — asking doesn't increase risk." },
-  { step: 2, title: "Listen without judgment", description: "Be present. Don't try to fix — just be there." },
-  { step: 3, title: "Keep them safe", description: "Remove access to means. Stay with them." },
-  { step: 4, title: "Help connect", description: "Guide them to professional help or a crisis line." },
-  { step: 5, title: "Follow up", description: "Check in regularly. Your continued presence matters." },
-];
-
-const doSay = [
-  "\"I'm here for you, and I care.\"",
-  "\"You're not alone in this.\"",
-  "\"It's okay to ask for help.\"",
-  "\"Tell me what you're feeling.\"",
-];
-
-const dontSay = [
-  { bad: "\"Just think positive.\"", better: "\"I hear you. Your feelings are valid.\"" },
-  { bad: "\"Others have it worse.\"", better: "\"Your pain matters regardless.\"" },
-  { bad: "\"You're being selfish.\"", better: "\"I can see you're in a lot of pain.\"" },
-];
+import { useTranslation } from "react-i18next";
 
 const resources = [
   { name: "World Health Organization", url: "https://www.who.int/health-topics/suicide" },
@@ -38,6 +9,38 @@ const resources = [
 ];
 
 const PreventionResources = () => {
+  const { t } = useTranslation();
+
+  const warningSigns = [
+    { icon: "\ud83d\udcac", text: t('prevention.warning1') },
+    { icon: "\ud83d\ude14", text: t('prevention.warning2') },
+    { icon: "\ud83d\udd04", text: t('prevention.warning3') },
+    { icon: "\u26a0\ufe0f", text: t('prevention.warning4') },
+    { icon: "\ud83d\ude34", text: t('prevention.warning5') },
+    { icon: "\ud83d\udc8a", text: t('prevention.warning6') },
+  ];
+
+  const howToHelp = [
+    { step: 1, title: t('prevention.step1Title'), description: t('prevention.step1Desc') },
+    { step: 2, title: t('prevention.step2Title'), description: t('prevention.step2Desc') },
+    { step: 3, title: t('prevention.step3Title'), description: t('prevention.step3Desc') },
+    { step: 4, title: t('prevention.step4Title'), description: t('prevention.step4Desc') },
+    { step: 5, title: t('prevention.step5Title'), description: t('prevention.step5Desc') },
+  ];
+
+  const doSay = [
+    t('prevention.doSay1'),
+    t('prevention.doSay2'),
+    t('prevention.doSay3'),
+    t('prevention.doSay4'),
+  ];
+
+  const dontSay = [
+    { bad: t('prevention.dontSay1Bad'), better: t('prevention.dontSay1Better') },
+    { bad: t('prevention.dontSay2Bad'), better: t('prevention.dontSay2Better') },
+    { bad: t('prevention.dontSay3Bad'), better: t('prevention.dontSay3Better') },
+  ];
+
   return (
     <section className="px-6 py-24 bg-muted/30">
       <div className="max-w-6xl mx-auto">
@@ -47,9 +50,9 @@ const PreventionResources = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Prevention & Resources</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">{t('prevention.title')}</h2>
           <p className="text-muted-foreground mt-3 text-lg max-w-xl mx-auto">
-            Knowledge saves lives. Here's how you can help.
+            {t('prevention.subtitle')}
           </p>
         </motion.div>
 
@@ -62,7 +65,7 @@ const PreventionResources = () => {
         >
           <div className="flex items-center gap-2 mb-6">
             <AlertTriangle className="w-5 h-5 text-accent" />
-            <h3 className="text-xl font-semibold">Warning Signs to Watch For</h3>
+            <h3 className="text-xl font-semibold">{t('prevention.warningSigns')}</h3>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {warningSigns.map((sign) => (
@@ -83,7 +86,7 @@ const PreventionResources = () => {
         >
           <div className="flex items-center gap-2 mb-6">
             <Heart className="w-5 h-5 text-primary" />
-            <h3 className="text-xl font-semibold">How to Help Someone</h3>
+            <h3 className="text-xl font-semibold">{t('prevention.howToHelp')}</h3>
           </div>
           <div className="space-y-4">
             {howToHelp.map((item) => (
@@ -109,7 +112,7 @@ const PreventionResources = () => {
           >
             <div className="flex items-center gap-2 mb-4">
               <MessageCircle className="w-5 h-5 text-primary" />
-              <h3 className="text-lg font-semibold">What You Can Say</h3>
+              <h3 className="text-lg font-semibold">{t('prevention.whatToSay')}</h3>
             </div>
             <div className="space-y-3">
               {doSay.map((phrase) => (
@@ -127,13 +130,13 @@ const PreventionResources = () => {
           >
             <div className="flex items-center gap-2 mb-4">
               <XCircle className="w-5 h-5 text-accent" />
-              <h3 className="text-lg font-semibold">What NOT to Say</h3>
+              <h3 className="text-lg font-semibold">{t('prevention.whatNotToSay')}</h3>
             </div>
             <div className="space-y-3">
               {dontSay.map((item) => (
                 <div key={item.bad} className="p-4 rounded-2xl bg-card border border-border">
                   <p className="text-muted-foreground line-through text-sm">{item.bad}</p>
-                  <p className="text-primary font-medium text-sm mt-1">→ {item.better}</p>
+                  <p className="text-primary font-medium text-sm mt-1">&rarr; {item.better}</p>
                 </div>
               ))}
             </div>
@@ -146,7 +149,7 @@ const PreventionResources = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-lg font-semibold mb-4">Trusted Resources</h3>
+          <h3 className="text-lg font-semibold mb-4">{t('prevention.trustedResources')}</h3>
           <div className="flex flex-wrap gap-3">
             {resources.map((r) => (
               <a
