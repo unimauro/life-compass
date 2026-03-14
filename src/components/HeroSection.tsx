@@ -1,13 +1,22 @@
 import { motion } from "framer-motion";
 import { Phone, Heart, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const HeroSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative min-h-[85vh] flex flex-col items-center justify-center px-6 py-24 overflow-hidden">
       {/* Subtle background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
-      
+
+      {/* Language Switcher */}
+      <div className="absolute top-6 right-6 z-20">
+        <LanguageSwitcher />
+      </div>
+
       <motion.div
         className="relative z-10 max-w-4xl mx-auto text-center space-y-8"
         initial={{ opacity: 0, y: 30 }}
@@ -21,16 +30,15 @@ const HeroSection = () => {
           transition={{ delay: 0.2 }}
         >
           <Heart className="w-4 h-4" />
-          Suicide Prevention Dashboard
+          {t('hero.badge')}
         </motion.div>
 
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tighter text-foreground leading-[1.1]">
-          Every Life Matters
+          {t('hero.title')}
         </h1>
 
         <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-          Raising awareness through data. You are not alone. Every data point represents a life, 
-          a family, a community. Together, we can change the story.
+          {t('hero.subtitle')}
         </p>
 
         {/* Emergency CTA */}
@@ -43,12 +51,12 @@ const HeroSection = () => {
           <Button variant="emergency" size="lg" asChild className="text-base px-8 py-6">
             <a href="tel:988">
               <Phone className="w-5 h-5" />
-              Call 988 (US Crisis Line)
+              {t('hero.callCrisis')}
             </a>
           </Button>
           <Button variant="hopeful" size="lg" asChild className="text-base px-8 py-6">
             <a href="#helplines">
-              Find Help In Your Country
+              {t('hero.findHelp')}
             </a>
           </Button>
         </motion.div>
@@ -59,7 +67,7 @@ const HeroSection = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
         >
-          If you or someone you know is in crisis, help is available 24/7.
+          {t('hero.crisisMessage')}
         </motion.p>
       </motion.div>
 

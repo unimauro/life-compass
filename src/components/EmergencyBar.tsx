@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 
 const EmergencyBar = () => {
+  const { t } = useTranslation();
+
   return (
     <motion.div
       className="fixed bottom-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-md border-t border-border px-4 py-3"
@@ -12,15 +15,15 @@ const EmergencyBar = () => {
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between gap-4">
         <p className="text-sm text-muted-foreground hidden sm:block">
-          Need help now? You are not alone. Help is available 24/7.
+          {t('emergency.messageFull')}
         </p>
         <p className="text-sm text-muted-foreground sm:hidden">
-          Need help now?
+          {t('emergency.messageShort')}
         </p>
         <Button variant="emergency" size="sm" asChild className="shrink-0">
           <a href="tel:988">
             <Phone className="w-4 h-4" />
-            Call 988
+            {t('emergency.call988')}
           </a>
         </Button>
       </div>
