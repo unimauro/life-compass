@@ -1,12 +1,12 @@
 {
   "pageTitle": "Life Compass — We are with you",
   "hero": {
-    "badge": "Suicide Prevention Dashboard",
-    "title": "Every Life Matters",
-    "subtitle": "Raising awareness through data. You are not alone. Every data point represents a life, a family, a community. Together, we can change the story.",
-    "callCrisis": "Call",
-    "findHelp": "Find Help In Your Country",
-    "crisisMessage": "If you or someone you know is in crisis, help is available 24/7.",
+    "badge": "We are with you",
+    "title": "You are not alone",
+    "subtitle": "Behind every number is a person, a family, a story. We are here to walk with you. There is always another way.",
+    "callCrisis": "Talk to someone now",
+    "findHelp": "Find help near you",
+    "crisisMessage": "If you or someone you know is going through a difficult time, there are people who want to listen. Call, write, don't stay silent.",
     "inspirational": [
       "Your story isn't over yet.",
       "This pain is not the end.",

@@ -1,12 +1,12 @@
 {
   "pageTitle": "Life Compass — Estamos contigo",
   "hero": {
-    "badge": "Panel de Prevenci\u00f3n del Suicidio",
-    "title": "Cada Vida Importa",
-    "subtitle": "Creando conciencia a trav\u00e9s de datos. No est\u00e1s solo/a. Cada dato representa una vida, una familia, una comunidad. Juntos podemos cambiar la historia.",
-    "callCrisis": "Llama al",
-    "findHelp": "Encuentra Ayuda en Tu Pa\u00eds",
-    "crisisMessage": "Si tú o alguien que conoces está en crisis, hay ayuda disponible las 24 horas.",
+    "badge": "Estamos contigo",
+    "title": "No estás solo",
+    "subtitle": "Detrás de cada número hay una persona, una familia, una historia. Estamos aquí para acompañarte. Siempre hay otra salida.",
+    "callCrisis": "Habla con alguien ahora",
+    "findHelp": "Busca ayuda cerca de ti",
+    "crisisMessage": "Si tú o alguien que conoces está pasando por un momento difícil, hay personas que quieren escucharte. Llama, escribe, no te quedes en silencio.",
     "inspirational": [
       "Tu historia aún continúa.",
       "Este dolor no es el final.",
