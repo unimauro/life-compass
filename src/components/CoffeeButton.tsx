@@ -18,7 +18,7 @@ const CoffeeButton = () => {
         href="https://buymeacoffee.com/Unimauro"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 bg-[#FFDD00] text-[#000000] rounded-full p-3 shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-200"
+        className="flex items-center gap-2 bg-[#E8D5B7] text-[#5C4A32] rounded-full p-3 shadow-md hover:shadow-lg hover:scale-110 transition-all duration-200 opacity-80 hover:opacity-100"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >

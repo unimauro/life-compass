@@ -18,7 +18,7 @@ const DashboardFooter = () => {
             href="https://buymeacoffee.com/Unimauro"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#FFDD00] text-[#000000] font-semibold text-sm hover:bg-[#FFDD00]/90 transition-colors shadow-sm"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#E8D5B7] text-[#5C4A32] font-semibold text-sm hover:bg-[#D4C4A8] transition-colors shadow-sm"
           >
             <Coffee className="w-5 h-5" />
             {t('footer.supportUs')}
