@@ -3,9 +3,13 @@ import { Phone, Heart, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useCountryHelpline } from "@/hooks/use-country-helpline";
 
 const HeroSection = () => {
   const { t } = useTranslation();
+  const { helpline } = useCountryHelpline();
+
+  const phoneLink = `tel:${helpline.phone.replace(/\s/g, "")}`;
 
   return (
     <section className="relative min-h-[85vh] flex flex-col items-center justify-center px-6 py-24 overflow-hidden">
@@ -49,9 +53,9 @@ const HeroSection = () => {
           transition={{ delay: 0.4 }}
         >
           <Button variant="emergency" size="lg" asChild className="text-base px-8 py-6">
-            <a href="tel:988">
+            <a href={phoneLink}>
               <Phone className="w-5 h-5" />
-              {t('hero.callCrisis')}
+              {t('hero.callCrisis')} {helpline.phone}
             </a>
           </Button>
           <Button variant="hopeful" size="lg" asChild className="text-base px-8 py-6">
@@ -67,7 +71,7 @@ const HeroSection = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
         >
-          {t('hero.crisisMessage')}
+          {helpline.organization} — {helpline.country}
         </motion.p>
       </motion.div>
 

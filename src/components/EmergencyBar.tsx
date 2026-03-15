@@ -2,9 +2,13 @@ import { motion } from "framer-motion";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
+import { useCountryHelpline } from "@/hooks/use-country-helpline";
 
 const EmergencyBar = () => {
   const { t } = useTranslation();
+  const { helpline } = useCountryHelpline();
+
+  const phoneLink = `tel:${helpline.phone.replace(/\s/g, "")}`;
 
   return (
     <motion.div
@@ -15,15 +19,15 @@ const EmergencyBar = () => {
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between gap-4">
         <p className="text-sm text-muted-foreground hidden sm:block">
-          {t('emergency.messageFull')}
+          {t('emergency.messageFull')} — {helpline.organization} ({helpline.country})
         </p>
         <p className="text-sm text-muted-foreground sm:hidden">
           {t('emergency.messageShort')}
         </p>
         <Button variant="emergency" size="sm" asChild className="shrink-0">
-          <a href="tel:988">
+          <a href={phoneLink}>
             <Phone className="w-4 h-4" />
-            {t('emergency.call988')}
+            {helpline.phone}
           </a>
         </Button>
       </div>
