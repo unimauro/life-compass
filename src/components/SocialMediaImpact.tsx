@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from "recharts";
-import { ShieldAlert, ShieldCheck } from "lucide-react";
+import { ShieldAlert, ShieldCheck, Phone } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useCountryHelpline } from "@/hooks/use-country-helpline";
 
 const usageData = [
   { age: "13\u201317", hours: 4.8, ideation: 18 },
@@ -11,6 +12,9 @@ const usageData = [
 
 const SocialMediaImpact = () => {
   const { t } = useTranslation();
+  const { helpline } = useCountryHelpline();
+
+  const localHelplineText = `${t('social.helpful1')}: ${helpline.phone} — ${helpline.organization} (${helpline.country})`;
 
   const harmful = [
     t('social.harmful1'), t('social.harmful2'), t('social.harmful3'),
@@ -18,7 +22,7 @@ const SocialMediaImpact = () => {
   ];
 
   const helpful = [
-    t('social.helpful1'), t('social.helpful2'), t('social.helpful3'),
+    localHelplineText, t('social.helpful2'), t('social.helpful3'),
     t('social.helpful4'), t('social.helpful5'), t('social.helpful6'),
   ];
 
