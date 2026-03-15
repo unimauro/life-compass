@@ -1,42 +1,77 @@
-country,country_code,region,phone,organization,hours,languages,flag_emoji
-United States,US,North America,988,988 Suicide & Crisis Lifeline,24/7,"English, Spanish",🇺🇸
-Canada,CA,North America,988,988 Suicide Crisis Helpline,24/7,"English, French",🇨🇦
-United Kingdom,GB,Europe,116 123,Samaritans,24/7,English,🇬🇧
-Spain,ES,Europe,024,Línea de Atención a la Conducta Suicida,24/7,Spanish,🇪🇸
-France,FR,Europe,3114,Numéro National de Prévention du Suicide,24/7,French,🇫🇷
-Germany,DE,Europe,0800 111 0 111,Telefonseelsorge,24/7,German,🇩🇪
-Italy,IT,Europe,06 77208977,Telefono Amico Italia,24/7,Italian,🇮🇹
-Netherlands,NL,Europe,113,113 Zelfmoordpreventie,24/7,Dutch,🇳🇱
-Portugal,PT,Europe,808 200 204,SOS Voz Amiga,16:00-24:00,Portuguese,🇵🇹
-Sweden,SE,Europe,90101,Mind Självmordslinjen,24/7,Swedish,🇸🇪
-Ireland,IE,Europe,116 123,Samaritans Ireland,24/7,English,🇮🇪
-Australia,AU,Oceania,13 11 14,Lifeline Australia,24/7,English,🇦🇺
-New Zealand,NZ,Oceania,1737,Need to Talk?,24/7,English,🇳🇿
-Japan,JP,Asia,0120-783-556,Inochi no Denwa,24/7,Japanese,🇯🇵
-South Korea,KR,Asia,1393,정신건강위기상담전화,24/7,Korean,🇰🇷
-China,CN,Asia,400-161-9995,Beijing Psychological Crisis Research and Intervention Center,24/7,Chinese,🇨🇳
-India,IN,Asia,9152987821,iCall (TISS),Mon-Sat 8am-10pm,"Hindi, English",🇮🇳
-Thailand,TH,Asia,1323,Department of Mental Health,24/7,Thai,🇹🇭
-Mexico,MX,LATAM,800-290-0024,SAPTEL,24/7,Spanish,🇲🇽
-Argentina,AR,LATAM,135,Centro de Asistencia al Suicida,24/7,Spanish,🇦🇷
-Brazil,BR,LATAM,188,CVV - Centro de Valorização da Vida,24/7,Portuguese,🇧🇷
-Chile,CL,LATAM,600-360-7777,Línea Libre / *4141,24/7,Spanish,🇨🇱
-Colombia,CO,LATAM,106,Línea 106,24/7,Spanish,🇨🇴
-Peru,PE,LATAM,113,Línea 113 (MINSA),24/7,Spanish,🇵🇪
-Uruguay,UY,LATAM,0800-0767,Última Esperanza / *0767,24/7,Spanish,🇺🇾
-Ecuador,EC,LATAM,171,ECU 911,24/7,Spanish,🇪🇨
-Bolivia,BO,LATAM,800-10-0639,Línea Gratuita,24/7,Spanish,🇧🇴
-Paraguay,PY,LATAM,(021) 220-418,Prevención del Suicidio,24/7,Spanish,🇵🇾
-Venezuela,VE,LATAM,0800-0-HOPE,Línea de la Vida,24/7,Spanish,🇻🇪
-Costa Rica,CR,LATAM,2272-3774,Línea de la Vida,24/7,Spanish,🇨🇷
-Panama,PA,LATAM,169,Línea de Crisis,24/7,Spanish,🇵🇦
-Guatemala,GT,LATAM,1546,Línea de Apoyo,24/7,Spanish,🇬🇹
-Dominican Republic,DO,LATAM,809-200-1202,Línea de la Vida,24/7,Spanish,🇩🇴
-Honduras,HN,LATAM,199,Línea de Emergencia,24/7,Spanish,🇭🇳
-El Salvador,SV,LATAM,134,Línea 134,24/7,Spanish,🇸🇻
-Cuba,CU,LATAM,103,Línea Anti-Suicida,24/7,Spanish,🇨🇺
-Nicaragua,NI,LATAM,2311-0011,Línea de Ayuda,8am-8pm,Spanish,🇳🇮
-Russia,RU,Europe,8-800-2000-122,Телефон Доверия,24/7,Russian,🇷🇺
-South Africa,ZA,Africa,0800-567-567,SADAG Suicide Crisis Line,24/7,English,🇿🇦
-Nigeria,NG,Africa,09010003401,MANI Nigeria,24/7,English,🇳🇬
-Kenya,KE,Africa,0722 178 177,Befrienders Kenya,24/7,English,🇰🇪
+country,country_code,region,phone,organization,hours,languages,flag_emoji,whatsapp,telegram
+United States,US,North America,988,988 Suicide & Crisis Lifeline,24/7,"English, Spanish",🇺🇸,,
+Canada,CA,North America,988,988 Suicide Crisis Helpline,24/7,"English, French",🇨🇦,,
+Peru,PE,LATAM,113,Línea 113 (MINSA),24/7,"Spanish, Quechua",🇵🇪,+51964091760,
+Mexico,MX,LATAM,800-290-0024,SAPTEL,24/7,Spanish,🇲🇽,,
+Mexico,MX,LATAM,800-911-2000,Línea de la Vida,24/7,Spanish,🇲🇽,,
+Argentina,AR,LATAM,135,Centro de Asistencia al Suicida,24/7,Spanish,🇦🇷,+5491152751135,
+Chile,CL,LATAM,*4141,Línea Libre,24/7,Spanish,🇨🇱,,
+Chile,CL,LATAM,600-360-7777,Línea de Prevención del Suicidio,24/7,Spanish,🇨🇱,,
+Colombia,CO,LATAM,106,Línea 106,24/7,Spanish,🇨🇴,,
+Brazil,BR,LATAM,188,CVV - Centro de Valorização da Vida,24/7,Portuguese,🇧🇷,,
+Uruguay,UY,LATAM,0800-0767,Última Esperanza,24/7,Spanish,🇺🇾,,
+Uruguay,UY,LATAM,*0767,Última Esperanza (short),24/7,Spanish,🇺🇾,,
+Ecuador,EC,LATAM,171,ECU 911,24/7,Spanish,🇪🇨,,
+Bolivia,BO,LATAM,800-10-0639,Línea Gratuita,24/7,Spanish,🇧🇴,,
+Paraguay,PY,LATAM,(021) 220-418,Prevención del Suicidio,24/7,Spanish,🇵🇾,,
+Venezuela,VE,LATAM,0-800-29832-0,Línea de la Vida (0-800-AYUDA-0),24/7,Spanish,🇻🇪,,
+Costa Rica,CR,LATAM,2272-3774,Línea de la Vida,24/7,Spanish,🇨🇷,,
+Panama,PA,LATAM,169,Línea de Crisis,24/7,Spanish,🇵🇦,,
+Dominican Republic,DO,LATAM,(809) 920-0674,Línea de Crisis,24/7,Spanish,🇩🇴,,
+Guatemala,GT,LATAM,1546,Línea de Apoyo,24/7,Spanish,🇬🇹,,
+Honduras,HN,LATAM,2232-1314,CPTPS,24/7,Spanish,🇭🇳,,
+El Salvador,SV,LATAM,2251-3000,Línea de Emergencia,24/7,Spanish,🇸🇻,,
+Nicaragua,NI,LATAM,2277-1010,Centro de Ayuda,8am-8pm,Spanish,🇳🇮,,
+Cuba,CU,LATAM,838-8388,Línea Confidencial,24/7,Spanish,🇨🇺,,
+Suriname,SR,LATAM,471-000,Suriname Crisis Line,24/7,Dutch,🇸🇷,,
+Lesotho,LS,Africa,800-22-800,Lesotho Crisis Line,24/7,English,🇱🇸,,
+Guyana,GY,LATAM,223-0001,Guyana Crisis Line,24/7,English,🇬🇾,,
+Eswatini,SZ,Africa,2404-3556,Eswatini Crisis Line,24/7,English,🇸🇿,,
+South Korea,KR,Asia,1393,정신건강위기상담전화,24/7,Korean,🇰🇷,,
+South Korea,KR,Asia,109,자살예방상담전화,24/7,Korean,🇰🇷,,
+Kiribati,KI,Oceania,,No known dedicated line — use regional support,,,🇰🇮,,
+Micronesia,FM,Oceania,,No known dedicated line — use regional support,,,🇫🇲,,
+Lithuania,LT,Europe,116 123,Vilties Linija,24/7,Lithuanian,🇱🇹,,
+Lithuania,LT,Europe,8-800-28888,Jaunimo Linija,24/7,Lithuanian,🇱🇹,,
+Russia,RU,Europe,8-800-2000-122,Телефон Доверия,24/7,Russian,🇷🇺,,
+South Africa,ZA,Africa,0800-567-567,SADAG Suicide Crisis Line,24/7,English,🇿🇦,,
+Belarus,BY,Europe,8-017-352-44-44,Телефон Доверия,24/7,Russian,🇧🇾,,
+Belgium,BE,Europe,1813,Zelfmoordlijn (Dutch),24/7,Dutch,🇧🇪,,
+Belgium,BE,Europe,0800-32-123,Centre de Prévention du Suicide (French),24/7,French,🇧🇪,,
+Japan,JP,Asia,0120-783-556,Inochi no Denwa,24/7,Japanese,🇯🇵,,
+Japan,JP,Asia,0570-064-556,Yorisoi Hotline,24/7,Japanese,🇯🇵,,
+Hungary,HU,Europe,116 123,Lelki Elsősegély,24/7,Hungarian,🇭🇺,,
+Spain,ES,Europe,024,Línea de Atención a la Conducta Suicida,24/7,Spanish,🇪🇸,,
+United Kingdom,GB,Europe,116 123,Samaritans,24/7,English,🇬🇧,,
+France,FR,Europe,3114,Numéro National de Prévention du Suicide,24/7,French,🇫🇷,,
+Germany,DE,Europe,0800-111-0-111,Telefonseelsorge,24/7,German,🇩🇪,,
+Italy,IT,Europe,800-274-274,Telefono Amico Italia,24/7,Italian,🇮🇹,,
+Portugal,PT,Europe,808-200-204,SOS Voz Amiga,16:00-24:00,Portuguese,🇵🇹,,
+Netherlands,NL,Europe,113,113 Zelfmoordpreventie,24/7,Dutch,🇳🇱,,
+Sweden,SE,Europe,90101,Mind Självmordslinjen,24/7,Swedish,🇸🇪,,
+Norway,NO,Europe,116 123,Mental Helse,24/7,Norwegian,🇳🇴,,
+Finland,FI,Europe,09-2525-0111,MIELI Crisis Line,24/7,Finnish,🇫🇮,,
+Denmark,DK,Europe,70-201-201,Livslinien,24/7,Danish,🇩🇰,,
+Austria,AT,Europe,142,Telefonseelsorge,24/7,German,🇦🇹,,
+Switzerland,CH,Europe,143,Die Dargebotene Hand,24/7,"German, French, Italian",🇨🇭,,
+Poland,PL,Europe,116 123,Telefon Zaufania,24/7,Polish,🇵🇱,,
+Czech Republic,CZ,Europe,116 123,Linka Bezpečí,24/7,Czech,🇨🇿,,
+Romania,RO,Europe,0800-801-200,Telefonul Sufletului,24/7,Romanian,🇷🇴,,
+Ukraine,UA,Europe,7333,Lifeline Ukraine,24/7,Ukrainian,🇺🇦,,
+Greece,GR,Europe,1018,Klimaka NGO,24/7,Greek,🇬🇷,,
+Ireland,IE,Europe,116 123,Samaritans Ireland,24/7,English,🇮🇪,,
+India,IN,Asia,9820466726,iCall (TISS),Mon-Sat 8am-10pm,"Hindi, English",🇮🇳,,
+India,IN,Asia,9152987821,AASRA,24/7,"Hindi, English",🇮🇳,,
+China,CN,Asia,010-82951332,Beijing Crisis Center,24/7,Chinese,🇨🇳,,
+China,CN,Asia,400-161-9995,Hope 24 Line,24/7,Chinese,🇨🇳,,
+Philippines,PH,Asia,(02) 8893-7603,Natasha Goulbourn Foundation,24/7,Filipino,🇵🇭,,
+Thailand,TH,Asia,1323,Department of Mental Health,24/7,Thai,🇹🇭,,
+Indonesia,ID,Asia,119 ext 8,Into The Light,24/7,Indonesian,🇮🇩,,
+Malaysia,MY,Asia,03-7956-8145,Befrienders KL,24/7,English,🇲🇾,,
+Singapore,SG,Asia,1800-221-4444,Samaritans of Singapore (SOS),24/7,English,🇸🇬,,
+Taiwan,TW,Asia,1925,Taiwan Suicide Prevention Center,24/7,Chinese,🇹🇼,,
+Vietnam,VN,Asia,1800-599-920,Vietnam Crisis Line,24/7,Vietnamese,🇻🇳,,
+Australia,AU,Oceania,13 11 14,Lifeline Australia,24/7,English,🇦🇺,,
+New Zealand,NZ,Oceania,1737,Need to Talk?,24/7,English,🇳🇿,,
+Nigeria,NG,Africa,0800-123-0800,MANI Nigeria,24/7,English,🇳🇬,,
+Kenya,KE,Africa,0800-720-990,Befrienders Kenya,24/7,English,🇰🇪,,
