@@ -7,11 +7,9 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import { useCountryHelpline } from "@/hooks/use-country-helpline";
 
 const HeroSection = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { helpline } = useCountryHelpline();
   const phoneLink = `tel:${helpline.phone.replace(/\s/g, "")}`;
-
-  const messages: string[] = t('hero.inspirational', { returnObjects: true }) as string[];
 
   const shuffle = useCallback((arr: string[]) => {
     const shuffled = [...arr];
@@ -26,10 +24,12 @@ const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+    const messages: string[] = t('hero.inspirational', { returnObjects: true }) as string[];
     if (messages?.length) {
       setShuffledMessages(shuffle(messages));
+      setCurrentIndex(0);
     }
-  }, [messages?.length, shuffle]);
+  }, [i18n.language, t, shuffle]);
 
   useEffect(() => {
     if (!shuffledMessages.length) return;
