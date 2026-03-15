@@ -1,4 +1,4 @@
-import { Heart } from "lucide-react";
+import { Heart, Coffee } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const DashboardFooter = () => {
@@ -11,6 +11,20 @@ const DashboardFooter = () => {
         <p className="text-foreground font-medium text-lg max-w-2xl mx-auto leading-relaxed">
           {t('footer.crisisMessage')}
         </p>
+
+        {/* Buy Me a Coffee */}
+        <div className="pt-4">
+          <a
+            href="https://buymeacoffee.com/Unimauro"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#FFDD00] text-[#000000] font-semibold text-sm hover:bg-[#FFDD00]/90 transition-colors shadow-sm"
+          >
+            <Coffee className="w-5 h-5" />
+            {t('footer.supportUs')}
+          </a>
+        </div>
+
         <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
           <span>{t('footer.data')}: WHO</span>
           <span>&bull;</span>
