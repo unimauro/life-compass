@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Heart, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
@@ -8,8 +9,35 @@ import { useCountryHelpline } from "@/hooks/use-country-helpline";
 const HeroSection = () => {
   const { t } = useTranslation();
   const { helpline } = useCountryHelpline();
-
   const phoneLink = `tel:${helpline.phone.replace(/\s/g, "")}`;
+
+  const messages: string[] = t('hero.inspirational', { returnObjects: true }) as string[];
+
+  const shuffle = useCallback((arr: string[]) => {
+    const shuffled = [...arr];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  }, []);
+
+  const [shuffledMessages, setShuffledMessages] = useState<string[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (messages?.length) {
+      setShuffledMessages(shuffle(messages));
+    }
+  }, [messages?.length, shuffle]);
+
+  useEffect(() => {
+    if (!shuffledMessages.length) return;
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % shuffledMessages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [shuffledMessages]);
 
   return (
     <section className="relative min-h-[85vh] flex flex-col items-center justify-center px-6 py-24 overflow-hidden">
@@ -48,7 +76,25 @@ const HeroSection = () => {
           {t('hero.title')}
         </h1>
 
-        <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+        {/* Inspirational message slider */}
+        <div className="h-16 sm:h-12 flex items-center justify-center">
+          <AnimatePresence mode="wait">
+            {shuffledMessages.length > 0 && (
+              <motion.p
+                key={currentIndex}
+                className="text-lg sm:text-xl text-primary/80 font-medium max-w-2xl mx-auto italic"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.6 }}
+              >
+                "{shuffledMessages[currentIndex]}"
+              </motion.p>
+            )}
+          </AnimatePresence>
+        </div>
+
+        <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
           {t('hero.subtitle')}
         </p>
 
