@@ -6,6 +6,9 @@ const languages = [
   { code: 'zh', label: '\u4e2d\u6587', flag: '\u{1F1E8}\u{1F1F3}' },
   { code: 'ko', label: '\ud55c\uad6d\uc5b4', flag: '\u{1F1F0}\u{1F1F7}' },
   { code: 'ru', label: '\u0420\u0443\u0441\u0441\u043a\u0438\u0439', flag: '\u{1F1F7}\u{1F1FA}' },
+  { code: 'ja', label: '日本語', flag: '🇯🇵' },
+  { code: 'fr', label: 'Français', flag: '🇫🇷' },
+  { code: 'lt', label: 'Lietuvių', flag: '🇱🇹' },
 ];
 
 const LanguageSwitcher = () => {

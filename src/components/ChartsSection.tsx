@@ -13,14 +13,21 @@ const globalTrend = [
 ];
 
 const topCountries = [
-  { country: "Lesotho", rate: 72.4 }, { country: "Guyana", rate: 40.3 },
-  { country: "Eswatini", rate: 29.4 }, { country: "South Korea", rate: 28.6 },
-  { country: "Kiribati", rate: 28.3 }, { country: "Micronesia", rate: 25.5 },
-  { country: "Lithuania", rate: 24.4 }, { country: "Suriname", rate: 23.2 },
-  { country: "Russia", rate: 21.6 }, { country: "South Africa", rate: 20.2 },
-  { country: "Belarus", rate: 19.1 }, { country: "Uruguay", rate: 18.4 },
-  { country: "Belgium", rate: 17.6 }, { country: "Japan", rate: 16.7 },
-  { country: "Hungary", rate: 16.2 },
+  { country: "🇱🇸 Lesotho", rate: 72.4 },
+  { country: "🇬🇾 Guyana", rate: 40.3 },
+  { country: "🇸🇿 Eswatini", rate: 29.4 },
+  { country: "🇰🇷 South Korea", rate: 28.6 },
+  { country: "🇰🇮 Kiribati", rate: 28.3 },
+  { country: "🇫🇲 Micronesia", rate: 25.5 },
+  { country: "🇱🇹 Lithuania", rate: 24.4 },
+  { country: "🇸🇷 Suriname", rate: 23.2 },
+  { country: "🇷🇺 Russia", rate: 21.6 },
+  { country: "🇿🇦 South Africa", rate: 20.2 },
+  { country: "🇧🇾 Belarus", rate: 19.1 },
+  { country: "🇺🇾 Uruguay", rate: 18.4 },
+  { country: "🇧🇪 Belgium", rate: 17.6 },
+  { country: "🇯🇵 Japan", rate: 16.7 },
+  { country: "🇭🇺 Hungary", rate: 16.2 },
 ];
 
 const ageDistribution = [
@@ -125,7 +132,7 @@ const ChartsSection = () => {
               <BarChart data={topCountries} layout="vertical">
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(214, 32%, 91%)" horizontal={false} />
                 <XAxis type="number" tick={{ fontSize: 11 }} stroke="hsl(215, 16%, 47%)" />
-                <YAxis dataKey="country" type="category" width={90} tick={{ fontSize: 11 }} stroke="hsl(215, 16%, 47%)" />
+                <YAxis dataKey="country" type="category" width={130} tick={{ fontSize: 11 }} stroke="hsl(215, 16%, 47%)" />
                 <Tooltip content={<CustomTooltip />} />
                 <Bar dataKey="rate" name={t('charts.ratePer100k')} fill="hsl(173, 80%, 35%)" radius={[0, 6, 6, 0]} />
               </BarChart>
