@@ -1,12 +1,6 @@
 import { motion } from "framer-motion";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, LineChart, Line, Legend, ScatterChart, Scatter, ZAxis, CartesianGrid } from "recharts";
-
-const incomeData = [
-  { group: "Low Income", rate: 11.2 },
-  { group: "Lower-Middle", rate: 12.8 },
-  { group: "Upper-Middle", rate: 8.5 },
-  { group: "High Income", rate: 11.6 },
-];
+import { useTranslation } from "react-i18next";
 
 const crisisData = [
   { year: "2005", unemployment: 5.1, suicideRate: 11.2 },
@@ -35,40 +29,49 @@ const scatterData = [
   { gdp: 12000, rate: 22, country: "Lithuania", z: 100 },
 ];
 
-const insights = [
-  { text: "Economic crises increase suicide risk by 20–30%", icon: "📉" },
-  { text: "Job loss is a leading risk factor, especially in men 40–60", icon: "💼" },
-  { text: "Poverty and debt are significant contributing factors", icon: "🏦" },
-  { text: "Countries with stronger social safety nets show lower rates", icon: "🛡️" },
-];
-
-const CustomTooltip = ({ active, payload, label }: any) => {
-  if (!active || !payload) return null;
-  return (
-    <div className="bg-card border border-border rounded-xl p-3 shadow-soft text-sm">
-      <p className="font-semibold text-foreground">{label}</p>
-      {payload.map((p: any) => (
-        <p key={p.name} style={{ color: p.color }} className="mt-1">
-          {p.name}: {p.value}
-        </p>
-      ))}
-    </div>
-  );
-};
-
-const ScatterTooltip = ({ active, payload }: any) => {
-  if (!active || !payload?.[0]) return null;
-  const d = payload[0].payload;
-  return (
-    <div className="bg-card border border-border rounded-xl p-3 shadow-soft text-sm">
-      <p className="font-semibold text-foreground">{d.country}</p>
-      <p className="text-muted-foreground">GDP/capita: ${d.gdp.toLocaleString()}</p>
-      <p className="text-primary">Rate: {d.rate} per 100k</p>
-    </div>
-  );
-};
-
 const EconomicFactors = () => {
+  const { t } = useTranslation();
+
+  const incomeData = [
+    { group: t('economic.lowIncome'), rate: 11.2 },
+    { group: t('economic.lowerMiddle'), rate: 12.8 },
+    { group: t('economic.upperMiddle'), rate: 8.5 },
+    { group: t('economic.highIncome'), rate: 11.6 },
+  ];
+
+  const insights = [
+    { text: t('economic.insight1'), icon: "\ud83d\udcc9" },
+    { text: t('economic.insight2'), icon: "\ud83d\udcbc" },
+    { text: t('economic.insight3'), icon: "\ud83c\udfe6" },
+    { text: t('economic.insight4'), icon: "\ud83d\udee1\ufe0f" },
+  ];
+
+  const CustomTooltip = ({ active, payload, label }: any) => {
+    if (!active || !payload) return null;
+    return (
+      <div className="bg-card border border-border rounded-xl p-3 shadow-soft text-sm">
+        <p className="font-semibold text-foreground">{label}</p>
+        {payload.map((p: any) => (
+          <p key={p.name} style={{ color: p.color }} className="mt-1">
+            {p.name}: {p.value}
+          </p>
+        ))}
+      </div>
+    );
+  };
+
+  const ScatterTooltip = ({ active, payload }: any) => {
+    if (!active || !payload?.[0]) return null;
+    const d = payload[0].payload;
+    return (
+      <div className="bg-card border border-border rounded-xl p-3 shadow-soft text-sm">
+        <p className="font-semibold text-foreground">{d.country}</p>
+        <p className="text-muted-foreground">{t('economic.gdpCapita')}: ${d.gdp.toLocaleString()}</p>
+        <p className="text-primary">{t('economic.rate')}: {d.rate} {t('economic.ratePer100k')}</p>
+      </div>
+    );
+  };
+
   return (
     <section className="px-6 py-24">
       <div className="max-w-6xl mx-auto">
@@ -78,9 +81,9 @@ const EconomicFactors = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Economic Factors</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">{t('economic.title')}</h2>
           <p className="text-muted-foreground mt-3 text-lg max-w-xl mx-auto">
-            Economic stability plays a critical role in mental health outcomes.
+            {t('economic.subtitle')}
           </p>
         </motion.div>
 
@@ -108,7 +111,7 @@ const EconomicFactors = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-lg font-semibold mb-6">GDP per Capita vs Suicide Rate</h3>
+            <h3 className="text-lg font-semibold mb-6">{t('economic.gdpVsRate')}</h3>
             <ResponsiveContainer width="100%" height={300}>
               <ScatterChart>
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(214, 32%, 91%)" />
@@ -128,7 +131,7 @@ const EconomicFactors = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-lg font-semibold mb-6">Unemployment vs Suicide Rate Over Time</h3>
+            <h3 className="text-lg font-semibold mb-6">{t('economic.unemploymentVsRate')}</h3>
             <ResponsiveContainer width="100%" height={300}>
               <LineChart data={crisisData}>
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(214, 32%, 91%)" />
@@ -137,8 +140,8 @@ const EconomicFactors = () => {
                 <YAxis yAxisId="right" orientation="right" tick={{ fontSize: 11 }} stroke="hsl(215, 16%, 47%)" />
                 <Tooltip content={<CustomTooltip />} />
                 <Legend />
-                <Line yAxisId="left" type="monotone" dataKey="unemployment" name="Unemployment %" stroke="hsl(38, 92%, 50%)" strokeWidth={2} dot={{ r: 3 }} />
-                <Line yAxisId="right" type="monotone" dataKey="suicideRate" name="Suicide Rate" stroke="hsl(173, 80%, 30%)" strokeWidth={2} dot={{ r: 3 }} />
+                <Line yAxisId="left" type="monotone" dataKey="unemployment" name={t('economic.unemployment')} stroke="hsl(38, 92%, 50%)" strokeWidth={2} dot={{ r: 3 }} />
+                <Line yAxisId="right" type="monotone" dataKey="suicideRate" name={t('economic.suicideRate')} stroke="hsl(173, 80%, 30%)" strokeWidth={2} dot={{ r: 3 }} />
               </LineChart>
             </ResponsiveContainer>
           </motion.div>
@@ -150,14 +153,14 @@ const EconomicFactors = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-lg font-semibold mb-6">Suicide Rates by Income Level</h3>
+            <h3 className="text-lg font-semibold mb-6">{t('economic.ratesByIncome')}</h3>
             <ResponsiveContainer width="100%" height={250}>
               <BarChart data={incomeData}>
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(214, 32%, 91%)" />
                 <XAxis dataKey="group" tick={{ fontSize: 12 }} stroke="hsl(215, 16%, 47%)" />
                 <YAxis tick={{ fontSize: 12 }} stroke="hsl(215, 16%, 47%)" />
                 <Tooltip content={<CustomTooltip />} />
-                <Bar dataKey="rate" name="Rate per 100k" fill="hsl(217, 91%, 65%)" radius={[8, 8, 0, 0]} />
+                <Bar dataKey="rate" name={t('economic.ratePer100k')} fill="hsl(217, 91%, 65%)" radius={[8, 8, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </motion.div>

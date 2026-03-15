@@ -1,25 +1,28 @@
 import { Heart } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const DashboardFooter = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="px-6 py-16 pb-24 border-t border-border">
       <div className="max-w-6xl mx-auto text-center space-y-6">
         <Heart className="w-6 h-6 text-primary mx-auto" />
         <p className="text-foreground font-medium text-lg max-w-2xl mx-auto leading-relaxed">
-          If you or someone you know is in crisis, please reach out. Help is available 24/7.
+          {t('footer.crisisMessage')}
         </p>
         <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-          <span>Data: WHO</span>
-          <span>•</span>
+          <span>{t('footer.data')}: WHO</span>
+          <span>&bull;</span>
           <span>IASP</span>
-          <span>•</span>
+          <span>&bull;</span>
           <span>World Bank</span>
-          <span>•</span>
+          <span>&bull;</span>
           <span>ITU</span>
         </div>
         <div className="text-sm text-muted-foreground space-y-1">
           <p>
-            Project by{" "}
+            {t('footer.projectBy')}{" "}
             <a
               href="https://github.com/unimauro"
               target="_blank"
@@ -30,7 +33,7 @@ const DashboardFooter = () => {
             </a>
           </p>
           <p className="text-xs text-muted-foreground/60">
-            Built with care. Every life is a story worth continuing.
+            {t('footer.builtWithCare')}
           </p>
         </div>
       </div>

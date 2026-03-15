@@ -1,40 +1,13 @@
 import { motion } from "framer-motion";
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend } from "recharts";
+import { useTranslation } from "react-i18next";
 
 const trendData = [
-  { year: "2000", "10–19": 3.2, "20–29": 12.4, "30–49": 15.1, "50–69": 18.3, "70+": 22.1 },
-  { year: "2005", "10–19": 3.5, "20–29": 12.0, "30–49": 14.6, "50–69": 17.5, "70+": 21.0 },
-  { year: "2010", "10–19": 3.8, "20–29": 11.8, "30–49": 14.0, "50–69": 16.8, "70+": 19.8 },
-  { year: "2015", "10–19": 4.1, "20–29": 11.5, "30–49": 13.2, "50–69": 15.9, "70+": 18.5 },
-  { year: "2020", "10–19": 4.5, "20–29": 11.2, "30–49": 12.8, "50–69": 15.2, "70+": 17.2 },
-];
-
-const ageGroups = [
-  {
-    range: "10–19",
-    factors: ["Bullying & cyberbullying", "Academic pressure", "Identity & sexuality", "Social media exposure"],
-    color: "bg-teal-100 text-teal-800 dark:bg-teal-900/30 dark:text-teal-300",
-  },
-  {
-    range: "20–29",
-    factors: ["Economic uncertainty", "Social isolation", "Substance abuse", "Relationship breakdown"],
-    color: "bg-blue-50 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300",
-  },
-  {
-    range: "30–49",
-    factors: ["Work stress & burnout", "Divorce & family conflict", "Financial burden", "Parenting pressure"],
-    color: "bg-teal-50 text-teal-700 dark:bg-teal-900/20 dark:text-teal-400",
-  },
-  {
-    range: "50–69",
-    factors: ["Chronic illness", "Retirement & loss of purpose", "Loneliness", "Job displacement"],
-    color: "bg-blue-100 text-blue-700 dark:bg-blue-900/20 dark:text-blue-400",
-  },
-  {
-    range: "70+",
-    factors: ["Health deterioration", "Loss of partner", "Social isolation", "Dependency & loss of autonomy"],
-    color: "bg-teal-100/50 text-teal-600 dark:bg-teal-900/10 dark:text-teal-500",
-  },
+  { year: "2000", "10\u201319": 3.2, "20\u201329": 12.4, "30\u201349": 15.1, "50\u201369": 18.3, "70+": 22.1 },
+  { year: "2005", "10\u201319": 3.5, "20\u201329": 12.0, "30\u201349": 14.6, "50\u201369": 17.5, "70+": 21.0 },
+  { year: "2010", "10\u201319": 3.8, "20\u201329": 11.8, "30\u201349": 14.0, "50\u201369": 16.8, "70+": 19.8 },
+  { year: "2015", "10\u201319": 4.1, "20\u201329": 11.5, "30\u201349": 13.2, "50\u201369": 15.9, "70+": 18.5 },
+  { year: "2020", "10\u201319": 4.5, "20\u201329": 11.2, "30\u201349": 12.8, "50\u201369": 15.2, "70+": 17.2 },
 ];
 
 const AREA_COLORS = [
@@ -45,21 +18,51 @@ const AREA_COLORS = [
   "hsl(217, 91%, 45%)",
 ];
 
-const CustomTooltip = ({ active, payload, label }: any) => {
-  if (!active || !payload) return null;
-  return (
-    <div className="bg-card border border-border rounded-xl p-3 shadow-soft text-sm">
-      <p className="font-semibold text-foreground">{label}</p>
-      {payload.map((p: any) => (
-        <p key={p.name} style={{ color: p.stroke || p.fill }} className="mt-1">
-          {p.name}: {p.value} per 100k
-        </p>
-      ))}
-    </div>
-  );
-};
-
 const AgeGroupDeepDive = () => {
+  const { t } = useTranslation();
+
+  const ageGroups = [
+    {
+      range: "10\u201319",
+      factors: [t('ageGroups.age10_19_f1'), t('ageGroups.age10_19_f2'), t('ageGroups.age10_19_f3'), t('ageGroups.age10_19_f4')],
+      color: "bg-teal-100 text-teal-800 dark:bg-teal-900/30 dark:text-teal-300",
+    },
+    {
+      range: "20\u201329",
+      factors: [t('ageGroups.age20_29_f1'), t('ageGroups.age20_29_f2'), t('ageGroups.age20_29_f3'), t('ageGroups.age20_29_f4')],
+      color: "bg-blue-50 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300",
+    },
+    {
+      range: "30\u201349",
+      factors: [t('ageGroups.age30_49_f1'), t('ageGroups.age30_49_f2'), t('ageGroups.age30_49_f3'), t('ageGroups.age30_49_f4')],
+      color: "bg-teal-50 text-teal-700 dark:bg-teal-900/20 dark:text-teal-400",
+    },
+    {
+      range: "50\u201369",
+      factors: [t('ageGroups.age50_69_f1'), t('ageGroups.age50_69_f2'), t('ageGroups.age50_69_f3'), t('ageGroups.age50_69_f4')],
+      color: "bg-blue-100 text-blue-700 dark:bg-blue-900/20 dark:text-blue-400",
+    },
+    {
+      range: "70+",
+      factors: [t('ageGroups.age70plus_f1'), t('ageGroups.age70plus_f2'), t('ageGroups.age70plus_f3'), t('ageGroups.age70plus_f4')],
+      color: "bg-teal-100/50 text-teal-600 dark:bg-teal-900/10 dark:text-teal-500",
+    },
+  ];
+
+  const CustomTooltip = ({ active, payload, label }: any) => {
+    if (!active || !payload) return null;
+    return (
+      <div className="bg-card border border-border rounded-xl p-3 shadow-soft text-sm">
+        <p className="font-semibold text-foreground">{label}</p>
+        {payload.map((p: any) => (
+          <p key={p.name} style={{ color: p.stroke || p.fill }} className="mt-1">
+            {p.name}: {p.value} {t('ageGroups.per100k')}
+          </p>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <section className="px-6 py-24">
       <div className="max-w-6xl mx-auto">
@@ -69,9 +72,9 @@ const AgeGroupDeepDive = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Age Group Deep Dive</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">{t('ageGroups.title')}</h2>
           <p className="text-muted-foreground mt-3 text-lg max-w-xl mx-auto">
-            Risk factors change across the lifespan — prevention must adapt accordingly.
+            {t('ageGroups.subtitle')}
           </p>
         </motion.div>
 
@@ -82,7 +85,7 @@ const AgeGroupDeepDive = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-lg font-semibold mb-6">Suicide Rates by Age Group Over Time</h3>
+          <h3 className="text-lg font-semibold mb-6">{t('ageGroups.chartTitle')}</h3>
           <ResponsiveContainer width="100%" height={350}>
             <AreaChart data={trendData}>
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(214, 32%, 91%)" />
@@ -90,7 +93,7 @@ const AgeGroupDeepDive = () => {
               <YAxis tick={{ fontSize: 12 }} stroke="hsl(215, 16%, 47%)" />
               <Tooltip content={<CustomTooltip />} />
               <Legend />
-              {["10–19", "20–29", "30–49", "50–69", "70+"].map((key, i) => (
+              {["10\u201319", "20\u201329", "30\u201349", "50\u201369", "70+"].map((key, i) => (
                 <Area
                   key={key}
                   type="monotone"
@@ -117,7 +120,7 @@ const AgeGroupDeepDive = () => {
               transition={{ delay: i * 0.05 }}
             >
               <span className={`inline-block px-3 py-1 rounded-full text-sm font-semibold mb-4 ${group.color}`}>
-                Ages {group.range}
+                {t('ageGroups.ages')} {group.range}
               </span>
               <ul className="space-y-2">
                 {group.factors.map((f) => (
