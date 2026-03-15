@@ -7,6 +7,10 @@
     "callCrisis": "Pasikalbėk su kuo nors dabar",
     "findHelp": "Rask pagalbą šalia savęs",
     "crisisMessage": "Jei tu ar tavo pažįstamas žmogus patiria sunkų laikotarpį, yra žmonių, kurie nori tavęs išklausyti. Paskambink, parašyk, netylėk.",
+    "listenMessage": "Reikia išgirsti balsą? Mes čia.",
+    "listenFemale": "Klausyti (moteriškas balsas)",
+    "listenMale": "Klausyti (vyriškas balsas)",
+    "stopListening": "Sustabdyti",
     "inspirational": [
       "Tavo istorija dar tesiasi.",
       "Sis skausmas nera pabaiga.",

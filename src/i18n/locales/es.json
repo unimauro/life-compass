@@ -7,6 +7,10 @@
     "callCrisis": "Habla con alguien ahora",
     "findHelp": "Busca ayuda cerca de ti",
     "crisisMessage": "Si tú o alguien que conoces está pasando por un momento difícil, hay personas que quieren escucharte. Llama, escribe, no te quedes en silencio.",
+    "listenMessage": "¿Necesitas escuchar una voz? Estamos aquí.",
+    "listenFemale": "Escuchar voz femenina",
+    "listenMale": "Escuchar voz masculina",
+    "stopListening": "Detener",
     "inspirational": [
       "Tu historia aún continúa.",
       "Este dolor no es el final.",

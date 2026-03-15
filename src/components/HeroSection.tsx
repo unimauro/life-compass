@@ -4,6 +4,7 @@ import { Phone, Heart, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
+import ListenButton from "./ListenButton";
 import { useCountryHelpline } from "@/hooks/use-country-helpline";
 
 const HeroSection = () => {
@@ -126,6 +127,8 @@ const HeroSection = () => {
         >
           {helpline.organization} — {helpline.country}
         </motion.p>
+
+        <ListenButton />
       </motion.div>
 
       {/* Scroll indicator */}

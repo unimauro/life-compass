@@ -7,6 +7,10 @@
     "callCrisis": "现在和某人聊聊",
     "findHelp": "寻找身边的帮助",
     "crisisMessage": "如果你或你认识的人正在经历困难时刻，有人想要倾听你。打电话、写信，不要独自沉默。",
+    "listenMessage": "需要听到一个声音吗？我们在这里。",
+    "listenFemale": "聆听（女声）",
+    "listenMale": "聆听（男声）",
+    "stopListening": "停止",
     "inspirational": [
       "你的故事还在继续。",
       "这份痛苦不是终点。",
