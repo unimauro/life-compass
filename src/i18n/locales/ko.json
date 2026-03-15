@@ -7,9 +7,7 @@
     "callCrisis": "지금 누군가와 대화하기",
     "findHelp": "가까운 도움 찾기",
     "crisisMessage": "당신이나 아는 사람이 힘든 시간을 보내고 있다면, 당신의 이야기를 듣고 싶은 사람들이 있습니다. 전화하세요, 메시지를 보내세요, 혼자 침묵하지 마세요.",
-    "listenMessage": "목소리를 듣고 싶으신가요? 우리는 여기 있습니다.",
-    "listenFemale": "듣기 (여성 목소리)",
-    "listenMale": "듣기 (남성 목소리)",
+    "listenMessage": "들어보세요",
     "stopListening": "중지",
     "inspirational": [
       "당신의 이야기는 아직 계속되고 있습니다.",

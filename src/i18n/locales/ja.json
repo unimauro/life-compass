@@ -7,9 +7,7 @@
     "callCrisis": "今すぐ誰かと話す",
     "findHelp": "近くの相談窓口を探す",
     "crisisMessage": "あなたや身近な人がつらい時を過ごしているなら、あなたの声を聞きたい人がいます。電話して、書いて、一人で抱え込まないで。",
-    "listenMessage": "声を聞きたいですか？私たちはここにいます。",
-    "listenFemale": "聞く（女性の声）",
-    "listenMale": "聞く（男性の声）",
+    "listenMessage": "聞いてください",
     "stopListening": "停止",
     "inspirational": [
       "あなたの物語はまだ続いています。",
