@@ -13,8 +13,15 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-[85vh] flex flex-col items-center justify-center px-6 py-24 overflow-hidden">
-      {/* Subtle background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
+      {/* Hero background image */}
+      <div className="absolute inset-0">
+        <img
+          src={`${import.meta.env.BASE_URL}hero-image.jpg`}
+          alt=""
+          className="w-full h-full object-cover opacity-20"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
+      </div>
 
       {/* Language Switcher */}
       <div className="absolute top-6 right-6 z-20">
